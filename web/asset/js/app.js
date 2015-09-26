@@ -13,9 +13,6 @@ angular.module('algoliaTest', [])
             clearTimeout(onChangeDelay);
             onChangeDelay = setTimeout(search.update, 150);
         };
-        search.imageEmpty = function (img) {
-            return img || 'http://bit.ly/1KIctx7';
-        };
     }])
     .filter('image', function() { return function(img) {
         return img || 'http://bit.ly/1OXCxcY';
