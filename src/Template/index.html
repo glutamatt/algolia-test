@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="algoliaTest">
+<head>
+  <meta charset="utf-8">
+  <title>Algolia Test Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/vendor/skeleton-css/css/normalize.css">
+  <link rel="stylesheet" href="/vendor/skeleton-css/css/skeleton.css">
+  <script src="/vendor/angular/angular.min.js"></script>
+  <script src="/asset/js/app.js"></script>
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Feedbin-Favicon-search-light.svg/1000px-Feedbin-Favicon-search-light.svg.png">
+  <style type="text/css">
+    #search-icon {max-height: 1.5em; margin: .5em; top: 12px; position: relative; }
+    #search-input {width: 90%}
+    .app-row { height: 5em ; padding-top: 1em; }
+    .app-icon { max-width: 4.5em; max-height: 4.5em; padding: .5em}
+    .app-name { padding: 1em}
+  </style>
+</head>
+<body>
+
+  <div class="container" ng-controller="SearchController as search">
+    <div class="row">
+      <div class="twelve column">
+        <img id="search-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Feedbin-Favicon-search-light.svg/1000px-Feedbin-Favicon-search-light.svg.png">
+        <input ng-model="search.query" ng-keydown="search.onChange()" type="text" id="search-input" class="u-full-width" placeholder="What are you looking for ?">
+      </div>
+    </div>
+
+    <div class="row">{{search.results.length}} results for search "{{search.query}}"</div>
+
+    <div class="row">
+      <div class="row app-row" ng-repeat="result in search.results">
+        <div class="one column"><img class="app-icon" src="{{result.image | image}}"></div>
+        <div class="ten columns app-name"><em>{{result.name}}</em>
+          <br><small>{{result.category}}</small></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

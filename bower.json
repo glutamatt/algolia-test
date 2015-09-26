@@ -1,0 +1,16 @@
+{
+  "name": "algolia-test",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton-css": "~2.0.4",
+    "angular": "~1.4.6"
+  }
+}
